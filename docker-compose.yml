@@ -1,0 +1,12 @@
+version: '1'
+services:
+  web:
+    build:
+      context: . #current project Directory
+      dockerfile: Dockerfile
+    ports:
+      - '5000:8080'
+      #- '5000:80' #For Nginx
+    volumes:
+      - /usr/app/node_modules #Ignore this mapping
+      - .:/usr/app # Current Directory map to /usr/app
